@@ -1,0 +1,98 @@
+/* Réinitialisation des styles */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background-color: grey;
+}
+
+/* Styles pour la barre de navigation */
+.navbar {
+  background-color: #060606;
+  height: 60px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 20px;
+}
+
+.menu-btn {
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+}
+
+.bars {
+  display: block;
+  width: 30px;
+  height: 3px;
+  background-color: #05FF00;
+  transition: background-color 0.3s ease;
+}
+
+.menu-btn:hover .bars {
+  background-color: white;
+}
+
+.menu {
+  list-style: none;
+  display: flex;
+}
+
+.menu li {
+  margin-left: 20px;
+}
+
+.menu li a {
+  text-decoration: none;
+  font-family: 'Jolly Lodger', cursive;
+  transition: font-size 0.3s ease;
+  display: inline-block;
+  padding: 8px 16px;
+  border: 2px solid #05FF00;
+  border-radius: 4px;
+  color: #05FF00;
+}
+
+.menu li a:hover {
+  font-size: 20px;
+  background-color: #05FF00;
+  color: #000000;
+}
+
+/* Styles pour le menu burger animé */
+#menu-toggle {
+  display: none;
+}
+
+#menu-toggle:checked ~ .menu {
+  max-height: 300px;
+  transition: max-height 0.5s ease;
+}
+
+@media screen and (max-width: 768px) {
+  .menu {
+    position: absolute;
+    top: 60px;
+    right: 0;
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.5s ease;
+    background-color: #000000;
+    width: 100%;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .menu li {
+    margin: 10px 0;
+  }
+
+  .menu-btn {
+    display: block;
+  }
+}
+
